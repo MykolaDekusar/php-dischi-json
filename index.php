@@ -17,10 +17,27 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="card"></div>
+                    <ul>
+                        <li v-for="card in data">
+                            <div class="card">
+                                <div class="img-cont">
+                                    <img :src="card.cover" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="card-title">{{card.name}}</h2>
+                                    <h3 class="album-name">{{card.album_name}}</h3>
+                                    <p class="score">{{card.score}}</p>
+                                    <p class="album-year">{{card.year}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </main>
+        <footer>
+            <p>Copyright||Created by <span class="creator">Draeknes</span></p>
+        </footer>
     </div>
 
     <!-- vue js -->

@@ -1,3 +1,12 @@
+/* SETUP SETTINGS */
+:root {
+  --black: #000000;
+  --gray: #353531;
+  --darkOrange: #ec4e20;
+  --orange: #ff9505;
+  --azure: #016fb9;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,29 +16,96 @@
 [v-cloak] {
   display: none;
 }
-body {
-  background-color: rgb(53, 53, 53);
-}
-
-header {
-  background-color: rgb(16, 16, 16);
-  padding: 2rem;
-}
-h1 {
-  text-align: center;
-  color: rgb(205, 26, 26);
-}
 
 .container {
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
 .row {
+  width: 100%;
+}
+.card {
+  padding: 2rem;
+  width: 300px;
+  height: 450px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1rem;
+  background: rgba(255, 138, 13, 0.339);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.card {
-  width: calc(100% / 4 - 2rem);
+.img-cont {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.card-content {
+  text-align: center;
+  padding: 0.5rem;
+}
+/* STYLE SETTINGS */
+body {
+  background-color: var(--gray);
+  background-image: url("../img/wallpaperflare.com_wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  padding: 2rem;
+  z-index: 2;
+  margin-bottom: 5rem;
+  background: rgba(206, 206, 206, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+h1 {
+  text-align: center;
+  color: var(--black);
+  font-size: 2.5rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(206, 206, 206, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  color: var(--darkOrange);
+}
+
+.creator {
+  color: var(--orange);
+}
+
+/* CARD COLORS */
+.card-title {
+  font-size: 2.5rem;
+}
+.album-name {
+  font-size: 1.8rem;
+}
+.score {
+  color: white;
+  font-size: 1.5rem;
+}
+.album-year {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
 }

@@ -11,13 +11,12 @@ createApp({
   methods: {
     getServerInfo() {
       axios.get(this.mainServerData).then((response) => {
-        console.log(response);
         this.data = response.data;
+        console.log(this.data[0]);
       });
     },
   },
   created() {
     this.getServerInfo();
-    console.log(this.data);
   },
 }).mount("#app");
