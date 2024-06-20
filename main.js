@@ -12,7 +12,7 @@ createApp({
     getServerInfo() {
       axios.get(this.mainServerData).then((response) => {
         this.data = response.data;
-        console.log(this.data[0]);
+        console.log(this.data);
       });
     },
   },
