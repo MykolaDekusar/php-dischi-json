@@ -5,7 +5,8 @@
     "name": "Megadeth",
     "album_name": "Rust In Peace",
     "year": "1990",
-    "score": "9.26"
+    "score": "9.26",
+    "description": "The best album ever made"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "name": "Judas Priest",
     "album_name": "Painkiller",
     "year": "1990",
-    "score": "9.26"
+    "score": "9.26",
+    "description": "What can you say? It just kills the pain away"
   },
   {
     "id": 3,
@@ -37,7 +39,8 @@
     "name": "Metallica",
     "album_name": "Master Of Puppets",
     "year": "1986",
-    "score": "9.25"
+    "score": "9.25",
+    "description": "Master!!! Master!!! Master of puppets is pulling your stringssss. Obey your master!!!"
   },
   {
     "id": 6,

@@ -179,6 +179,7 @@ footer {
 
 .contenuto {
   position: relative;
+  display: flex;
   margin: 7% auto;
   padding: 3rem;
   border: 1px solid var(--darkOrange);
@@ -205,4 +206,15 @@ footer {
   text-align: center;
   font-size: 3rem;
   border-radius: 10px;
+}
+
+.content {
+  margin-left: 3rem;
+  padding-right: 3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.red {
+  color: red;
 }

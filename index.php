@@ -39,7 +39,8 @@
             </main>
             <div class="container-pop" :class="{hide: hide}">
                 <div class="contenuto">
-                    <div class="inside"><img :src="cardData.cover" :alt="cardData.name">
+                    <div class="inside">
+                        <img :src="cardData.cover" :alt="cardData.name">
                         <div class="card-content-pop">
                             <h2 class="card-title">{{cardData.name}}</h2>
                             <h3 class="album-name">{{cardData.album_name}}</h3>
@@ -47,7 +48,11 @@
                             <p class="album-year">{{cardData.year}}</p>
                         </div>
                     </div>
-
+                    <div class="content">
+                        <h2>Description:</h2>
+                        <p v-if="cardData.description">{{cardData.description}}</p>
+                        <p v-else><span class="red">No</span> album description</p>
+                    </div>
                     <div class="close" @click="showHide">X</div>
                 </div>
 
