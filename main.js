@@ -19,16 +19,17 @@ createApp({
         this.data = response.data;
       });
     },
+    data(info) {
+      return;
+    },
     cardSearch(cardId) {
       axios.get(this.mainServerData).then((response) => {
-        for (let i = 0; i < response.data.length; i++) {
-          if (response.data[i].id === cardId) {
+        response.data.filter((info) => {
+          if (cardId === info.id) {
             this.showHide();
-            console.log(response.data[i]);
-            this.cardData = response.data[i];
-            console.log(this.cardData);
+            this.cardData = info;
           }
-        }
+        });
       });
     },
   },

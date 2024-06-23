@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/functions/function.php';
 // $data = [
 //     [
 //         'cover' => 'https://metalstorm.net/images/albums/1/1118.jpg',
@@ -86,15 +87,12 @@
 //     ],
 // ];
 
-// creo un file json con il mio array di bande
-// $file_json = json_encode($data);
-// file_put_contents('bands.json', $file_json);
-
-// specifico il tipo di info
-// header('Content-Type: application/json');
-// echo json_encode($data);
-
-
-// INVIO IL DATO DAL SERVER PRESO DA UN .JSON
 header('Content-Type: application/json');
-echo $json_string = file_get_contents('bands.json');
+// OTTENGO I DATI DA UN JSON
+$json_string = file_get_contents('bands.json');
+// DECRIPTO I DATI IN UNA STRINGA
+$data = json_decode($json_string, true);
+// DECIDO QUALI DATI RIMANDARE
+$data = array_map('serverAnswer', $data);
+// INVIO IL DATO DEL SERVER 
+echo json_encode($data);
