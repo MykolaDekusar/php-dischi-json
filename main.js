@@ -16,24 +16,25 @@ createApp({
     },
     getServerInfo() {
       axios.get(this.mainServerData).then((response) => {
+        console.log(response.data);
         this.data = response.data;
       });
     },
-    data(info) {
-      return;
-    },
     cardSearch(cardId) {
-      axios.get(this.mainServerData).then((response) => {
-        response.data.filter((info) => {
-          if (cardId === info.id) {
-            this.showHide();
-            this.cardData = info;
-          }
+      axios
+        .get(this.mainServerData, {
+          params: {
+            action: "read",
+            id: cardId,
+          },
+        })
+        .then((response) => {
+          this.showHide();
+          console.log(response.data);
+          this.cardData = response.data;
         });
-      });
     },
   },
-
   created() {
     this.getServerInfo();
   },

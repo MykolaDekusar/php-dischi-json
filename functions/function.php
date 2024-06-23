@@ -8,6 +8,5 @@ function serverAnswer($data)
         'album_name' => $data['album_name'],
         'year' => $data['year'],
         'score' => $data['score'],
-        'description' => $data['description'] ?? '',
     ];
-}
+};

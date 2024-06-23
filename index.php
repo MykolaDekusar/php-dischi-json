@@ -11,9 +11,14 @@
 
 <body>
     <div id="app" v-cloak>
-        <div :class="{overflow: !hide}">
+        <div>
             <header>
                 <h1>{{title}}</h1>
+                <form action="index.php" method="GET">
+                    <label for="search">Find Album</label>
+                    <input type="text" v-model="searchAlbum" name="search">
+                    <button @click="">Search</button>
+                </form>
             </header>
             <main>
                 <div class="container">

@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/functions/function.php';
+require_once  __DIR__ . '/functions/function.php';
+header('Content-Type: application/json');
 // $data = [
 //     [
 //         'cover' => 'https://metalstorm.net/images/albums/1/1118.jpg',
@@ -86,13 +87,28 @@ require_once __DIR__ . '/functions/function.php';
 //         'score' => '9.13'
 //     ],
 // ];
-
-header('Content-Type: application/json');
 // OTTENGO I DATI DA UN JSON
 $json_string = file_get_contents('bands.json');
 // DECRIPTO I DATI IN UNA STRINGA
 $data = json_decode($json_string, true);
+$result = $data;
+// LEGGO UNA CARD
+if (isset($_GET['action']) && $_GET['action'] === 'read') {
+    // VERIFICO CHE CI SIA UN ID
+    if (isset($_GET['id'])) {
+        // CERCO PER COLONNA L'ID
+        $data_position = array_search($_GET['id'], array_column($result, 'id'));
+        // SE E' ANDATO TUTTO BENE RISPONDO CON L'OGGETTO CHE HA L'ID CERCATO
+        if ($data_position !== false) {
+            $result = $data[$data_position];
+            echo json_encode($result);
+            die();
+        }
+    } else {
+        echo 'Error no id found';
+    }
+}
 // DECIDO QUALI DATI RIMANDARE
-$data = array_map('serverAnswer', $data);
+$result = array_map('serverAnswer', $result);
 // INVIO IL DATO DEL SERVER 
-echo json_encode($data);
+echo json_encode($result);
